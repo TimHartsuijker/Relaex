@@ -40,7 +40,7 @@ class Body extends StatelessWidget {
                               itemCount: 100,
                               itemBuilder: (BuildContext context, int index) {
                                 return Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(25.0),
                                   child: Text(
                                     'Scene $index',
                                     style: const TextStyle(
