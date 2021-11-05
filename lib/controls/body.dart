@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../scrollbar.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  Body({Key? key}) : super(key: key);
+  final ScrollController _firstController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
         Stack(
           children: [
             Container(
-              height: 100.0,
+              height: 1000.0,
               width: 455.0,
               color: const Color(0xff2d2629),
               child: const Text(
@@ -23,7 +23,40 @@ class Body extends StatelessWidget {
                 ),
               ),
             ),
-            Scroll(),
+            LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return Row(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 955,
+                      width: 445.0,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 100.0),
+                        child: Scrollbar(
+                          isAlwaysShown: true,
+                          controller: _firstController,
+                          child: ListView.builder(
+                              controller: _firstController,
+                              itemCount: 100,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Scene $index',
+                                    style: const TextStyle(
+                                      fontSize: 40.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                );
+                              }),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
             Align(
               alignment: Alignment.bottomLeft,
               child: Container(

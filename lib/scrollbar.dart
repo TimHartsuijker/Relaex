@@ -9,30 +9,31 @@ class Scroll extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Row(
-            children: <Widget>[
-              SizedBox(
-                  width: 445.0,
-                  child: Scrollbar(
-                    isAlwaysShown: true,
-                    controller: _firstController,
-                    child: ListView.builder(
-                        controller: _firstController,
-                        itemCount: 100,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Scene $index',
-                              style: const TextStyle(
-                                fontSize: 40.0,
-                                color: Colors.white,
-                              ),
+          children: <Widget>[
+            SizedBox(
+                height: 955,
+                width: 445.0,
+                child: Scrollbar(
+                  isAlwaysShown: true,
+                  controller: _firstController,
+                  child: ListView.builder(
+                      controller: _firstController,
+                      itemCount: 100,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Scene $index',
+                            style: const TextStyle(
+                              fontSize: 40.0,
+                              color: Colors.white,
                             ),
-                          );
-                        }),
-                  )),
-            ],
-          );
+                          ),
+                        );
+                      }),
+                )),
+          ],
+        );
       },
     );
   }
