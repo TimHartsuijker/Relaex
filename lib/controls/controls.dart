@@ -6,8 +6,8 @@ class Controls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff2d2629),
+    return Scaffold(
+      backgroundColor: const Color(0xff2d2629),
       body: Body(),
     );
   }
