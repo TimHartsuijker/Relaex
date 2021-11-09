@@ -94,13 +94,10 @@ class Body extends StatelessWidget {
         ),
         Stack(
           children: [
-            Flexible(
-              flex: 1,
-              fit: FlexFit.tight,
-              child: Container(
+              Container(
                 height: 1080.0,
                 width: 336,
-                color: Colors.blue,
+                color: const Color(0xff2d2629),
                 child: const Text(
                   'Modules',
                   textAlign: TextAlign.center,
@@ -110,53 +107,58 @@ class Body extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            // starts here
+
+
             LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
-                return Center(
-                  child: Row(
+                return Row(
                     children: [
-                    SizedBox(
-                    height: 1100,
-                    width: 375.0,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 100.0, right: 60.0),
-                      child: Scrollbar(
-                        controller: _firstController,
-                        child: ListView.builder(
+                      SizedBox(
+                        height: 1100,
+                        width: 330.0,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 100.0),
+                          child: Scrollbar(
                             controller: _firstController,
-                            itemCount: 11,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/SmartPlugOFF.png',
-                                    scale: 3,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(1.0),
-                                    child: Text(
-                                      'Modulenaam $index',
-                                      style: const TextStyle(
-                                        fontSize: 25.0,
-                                        color: Colors.white,
+                            child: ListView.builder(
+                                controller: _firstController,
+                                itemCount: 11,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Column(
+                                    children: [
+                                      GestureDetector(
+                                      onTap: () {
+                                        Navigator.pushNamed(context, '/');
+                                      },
+                                      child: Image.asset(
+                                        'assets/SmartPlugOFF.png',
+                                        scale: 3,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              );
-                            }),
+
+                                      Padding(
+                                        padding: const EdgeInsets.all(1.0),
+                                        child: Text(
+                                          'Modulenaam $index',
+                                          style: const TextStyle(
+                                            fontSize: 25.0,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                }),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                     ],
-                  ),
-                );
+                  );
 
               },
             ),
-            // stops here
+
           ],
         ),
       ],
