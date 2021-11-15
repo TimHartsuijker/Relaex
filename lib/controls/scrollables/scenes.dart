@@ -8,11 +8,10 @@ class Scenes extends StatefulWidget {
 }
 
 class _ScenesState extends State<Scenes> {
-  List<bool> isOn = [];
+  List<bool> isActive = [];
 
   @override
   Widget build(BuildContext context) {
-    Color textColor;
 
     final ScrollController _firstController = ScrollController();
 
@@ -31,10 +30,10 @@ class _ScenesState extends State<Scenes> {
                   controller: _firstController,
                   itemCount: 11,
                   itemBuilder: (BuildContext context, int index) {
-                    isOn.add(false);
+                    isActive.add(false);
                     // return wat elke rij uit de scrollbar nodig heeft
                     return GestureDetector(
-                      onTap: () => setState(() => isOn[index] = !isOn[index]),
+                      onTap: () => setState(() => isActive[index] = !isActive[index]),
                       child: Padding(
                         padding: const EdgeInsets.all(25.0),
                         // naam scene
@@ -42,7 +41,7 @@ class _ScenesState extends State<Scenes> {
                           'Scene $index',
                           style: TextStyle(
                             fontSize: 40.0,
-                            color: isOn[index] ? textColor = Colors.blue : textColor = Colors.white,
+                            color: isActive[index] ? Colors.blue : Colors.white,
                           ),
                         ),
                       ),
