@@ -282,6 +282,27 @@ class _BodyState extends State<Body> {
             ),
           ),
         ),
+        Padding(
+            padding: const EdgeInsets.only(left: 1375, top: 25),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary:
+            const Color(0xff404040),
+            minimumSize:
+            const Size(120, 55),
+            maximumSize:
+            const Size(120, 55),
+          ),
+          onPressed: () {},
+          child: const Text(
+            'Alles uit',
+            style: TextStyle(
+              fontSize: 18.0,
+            ),
+          ),
+        ),
+        ),
+
       ],
     );
   }

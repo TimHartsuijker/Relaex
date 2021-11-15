@@ -48,7 +48,7 @@ class Verlichting extends StatelessWidget {
                           ),
                           // slider rgb value
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 10.0),
+                            padding: const EdgeInsets.only(bottom: 20.0),
                             child: Row(
                               children: [
                                 Image.asset(
@@ -57,22 +57,21 @@ class Verlichting extends StatelessWidget {
                                 ),
                                 // knop om lichten op wit te zetten
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 200.0),
+                                  padding: const EdgeInsets.only(left: 150.0),
                                   child: Row(
                                     children: [
                                       Column(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 20, right: 40),
+                                            padding: const EdgeInsets.only(right: 20),
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 primary:
                                                     const Color(0xff404040),
                                                 minimumSize:
-                                                    const Size(100, 50),
+                                                    const Size(120, 55),
                                                 maximumSize:
-                                                    const Size(100, 50),
+                                                const Size(120, 55),
                                               ),
                                               onPressed: () {},
                                               child: const Text(
@@ -84,79 +83,25 @@ class Verlichting extends StatelessWidget {
                                             ),
                                           ),
                                           // knop om de snelheid van de instellingen te verhogen
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 20, right: 40),
-                                            child: ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                ),
-                                                primary:
-                                                    const Color(0xff404040),
-                                                minimumSize:
-                                                    const Size(100, 50),
-                                                maximumSize:
-                                                    const Size(100, 50),
-                                              ),
-                                              onPressed: () {},
-                                              child: const Text(
-                                                'speed +',
-                                                style: TextStyle(
-                                                  fontSize: 18.0,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
                                         ],
                                       ),
                                       Column(
                                         children: [
                                           // knop om de modus in te stellen
                                           Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 20, left: 40),
+                                            padding: const EdgeInsets.only(left: 20),
                                             child: ElevatedButton(
                                               style: ElevatedButton.styleFrom(
                                                 primary:
                                                     const Color(0xff404040),
                                                 minimumSize:
-                                                    const Size(100, 50),
+                                                const Size(120, 55),
                                                 maximumSize:
-                                                    const Size(100, 50),
+                                                const Size(120, 55),
                                               ),
                                               onPressed: () {},
                                               child: const Text(
                                                 'mode',
-                                                style: TextStyle(
-                                                  fontSize: 18.0,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          // knop om de snelheid van de instellingen te verlagen
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                top: 20, left: 40),
-                                            child: ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          30.0),
-                                                ),
-                                                primary:
-                                                    const Color(0xff404040),
-                                                minimumSize:
-                                                    const Size(100, 50),
-                                                maximumSize:
-                                                    const Size(100, 50),
-                                              ),
-                                              onPressed: () {},
-                                              child: const Text(
-                                                'speed -',
                                                 style: TextStyle(
                                                   fontSize: 18.0,
                                                 ),
@@ -176,7 +121,7 @@ class Verlichting extends StatelessWidget {
                               // slider helderheid
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 40.0, bottom: 50),
+                                    left: 40.0, bottom: 60),
                                 child: Image.asset(
                                   'assets/BarBlack&White.png',
                                   scale: 1,
@@ -185,10 +130,69 @@ class Verlichting extends StatelessWidget {
                               // slider hitte
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 35.0, bottom: 50),
+                                    left: 35.0, bottom: 60),
                                 child: Image.asset(
                                   'assets/BarHeat.png',
                                   scale: 1,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 180.0),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        // knop om de snelheid van de instellingen te verhogen
+                                        Padding(
+                                          padding: const EdgeInsets.only(bottom: 60, right: 20),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                              ),
+                                              primary: const Color(0xff404040),
+                                              minimumSize: const Size(120, 55),
+                                              maximumSize: const Size(120, 55),
+                                            ),
+                                            onPressed: () {},
+                                            child: const Text(
+                                              'speed +',
+                                              style: TextStyle(
+                                                fontSize: 18.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: [
+                                        // knop om de snelheid van de instellingen te verlagen
+                                        Padding(
+                                          padding: const EdgeInsets.only(bottom: 60, left: 20),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30.0),
+                                              ),
+                                              primary: const Color(0xff404040),
+                                              minimumSize: const Size(120, 55),
+                                              maximumSize: const Size(120, 55),
+                                            ),
+                                            onPressed: () {},
+                                            child: const Text(
+                                              'speed -',
+                                              style: TextStyle(
+                                                fontSize: 18.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
