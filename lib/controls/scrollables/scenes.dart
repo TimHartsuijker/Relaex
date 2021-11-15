@@ -10,7 +10,7 @@ class Scenes extends StatefulWidget {
 class _ScenesState extends State<Scenes> {
   @override
   Widget build(BuildContext context) {
-    bool isOn = false;
+    Color textColor = const Color(0xffFFFFFF);
     final ScrollController _firstController = ScrollController();
 
     return Row(
@@ -31,7 +31,7 @@ class _ScenesState extends State<Scenes> {
                     // return wat elke rij uit de scrollbar nodig heeft
                     return GestureDetector(
                       onTap: () {
-                        isOn = true;
+                        textColor = const Color(0xff000000);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(25.0),
@@ -40,7 +40,7 @@ class _ScenesState extends State<Scenes> {
                           'Scene $index',
                           style: const TextStyle(
                             fontSize: 40.0,
-                            color: Colors.white,
+                            color: textColor,
                           ),
                         ),
                       ),
