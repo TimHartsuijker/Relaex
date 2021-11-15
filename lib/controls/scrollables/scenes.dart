@@ -42,9 +42,7 @@ class _ScenesState extends State<Scenes> {
                           'Scene $index',
                           style: TextStyle(
                             fontSize: 40.0,
-                            color: isOn[index]
-                                ? textColor = Colors.blue
-                                : textColor = Colors.white,
+                            color: isOn[index] ? textColor = Colors.blue : textColor = Colors.white,
                           ),
                         ),
                       ),
