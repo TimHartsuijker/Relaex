@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Modules extends StatelessWidget {
-  Modules({Key? key}) : super(key: key);
+class Modules extends StatefulWidget {
+  const Modules({Key? key}) : super(key: key);
+
+  @override
+  State<Modules> createState() => _ModulesState();
+}
+
+class _ModulesState extends State<Modules> {
   final ScrollController _firstController = ScrollController();
+
+  List<bool> isActive = [];
 
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         return Row(
@@ -23,19 +32,19 @@ class Modules extends StatelessWidget {
                     controller: _firstController,
                     itemCount: 11,
                     itemBuilder: (BuildContext context, int index) {
+                      isActive.add(false);
                       // return wat elke rij uit de scrollbar nodig heeft
                       return Column(
                         children: [
                           // detect een klik op de module
                           GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, '/');
-                            },
-                            // plaatje smart plug
+                            onTap: (() => setState(() => isActive[index] = !isActive[index])
+                              ),
                             child: Image.asset(
-                              'assets/SmartPlugOFF.png',
+                              isActive[index] ? 'assets/SmartPlugON.png' : 'assets/SmartPlugOFF.png',
                               scale: 3,
                             ),
+                            // plaatje smart plug
                           ),
                           // naam module
                           Padding(

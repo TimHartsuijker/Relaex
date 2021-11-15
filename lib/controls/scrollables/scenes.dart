@@ -40,7 +40,6 @@ class _ScenesState extends State<Scenes> {
                           'Scene $index',
                           style: const TextStyle(
                             fontSize: 40.0,
-                            color: textColor,
                           ),
                         ),
                       ),
