@@ -10,25 +10,30 @@ class Verlichting extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints) {
         return Row(
           children: [
+            // witruimte
             SizedBox(
               height: 1100,
               width: 1600.0,
               child: Padding(
                 padding: const EdgeInsets.only(top: 100.0, left: 500.0),
+                // scrollbar besturing lichten
                 child: Scrollbar(
                   controller: _firstController,
                   child: ListView.builder(
                     controller: _firstController,
                     itemCount: 11,
                     itemBuilder: (BuildContext context, int index) {
+                      // return wat elke rij in de scrollbar moet hebben.
                       return Column(
                         children: [
                           Row(
                             children: [
+                              // knop om lampen aan of uit te zetten
                               Image.asset(
                                 'assets/powerButtonOFF.png',
                                 scale: 4,
                               ),
+                              // naam lampen groep
                               Padding(
                                 padding: const EdgeInsets.only(left: 25.0),
                                 child: Text(
@@ -41,23 +46,22 @@ class Verlichting extends StatelessWidget {
                               ),
                             ],
                           ),
+                          // slider rgb value
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 20.0),
+                            padding: const EdgeInsets.only(bottom: 10.0),
                             child: Row(
                               children: [
                                 Image.asset(
                                   'assets/BarRGB.png',
                                   scale: 0.6,
                                 ),
-
+                                // knop om lichten op wit te zetten
                                 Padding(
                                   padding: const EdgeInsets.only(left: 200.0),
                                   child: Row(
                                     children: [
-
                                       Column(
                                         children: [
-
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 20, right: 40),
@@ -79,7 +83,7 @@ class Verlichting extends StatelessWidget {
                                               ),
                                             ),
                                           ),
-
+                                          // knop om de snelheid van de instellingen te verhogen
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 20, right: 40),
@@ -110,6 +114,7 @@ class Verlichting extends StatelessWidget {
                                       ),
                                       Column(
                                         children: [
+                                          // knop om de modus in te stellen
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 bottom: 20, left: 40),
@@ -131,6 +136,7 @@ class Verlichting extends StatelessWidget {
                                               ),
                                             ),
                                           ),
+                                          // knop om de snelheid van de instellingen te verlagen
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 20, left: 40),
@@ -167,6 +173,7 @@ class Verlichting extends StatelessWidget {
                           ),
                           Row(
                             children: [
+                              // slider helderheid
                               Padding(
                                 padding: const EdgeInsets.only(
                                     left: 40.0, bottom: 50),
@@ -175,6 +182,7 @@ class Verlichting extends StatelessWidget {
                                   scale: 1,
                                 ),
                               ),
+                              // slider hitte
                               Padding(
                                 padding: const EdgeInsets.only(
                                     left: 35.0, bottom: 50),

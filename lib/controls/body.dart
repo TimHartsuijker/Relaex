@@ -19,6 +19,7 @@ class _BodyState extends State<Body> {
       children: [
         Row(
           children: [
+            // titelbalk scenes
             Flexible(
               fit: FlexFit.loose,
               child: Stack(
@@ -39,17 +40,19 @@ class _BodyState extends State<Body> {
 
                   // Scrollbar Scenes
                   Scenes(),
-
+                  // tandwiel en logo links onderin pagina
                   Flexible(
                     fit: FlexFit.loose,
                     child: Align(
                       alignment: Alignment.bottomLeft,
+                      // container tandwiel en logo
                       child: Container(
                         height: 100.0,
                         width: 455.0,
                         color: const Color(0xff2d2629),
                         child: Row(
                           children: [
+                            // detect een klik op het tandwiel en maak de admin login zichtbaar.
                             GestureDetector(
                               onTap: () =>
                                   setState(() => isVisible = true),
@@ -62,6 +65,7 @@ class _BodyState extends State<Body> {
                                 ),
                               ),
                             ),
+                            // logo
                             Image.asset(
                               'assets/RelaexLogo.jpg',
                               scale: 1,
@@ -74,11 +78,13 @@ class _BodyState extends State<Body> {
                 ],
               ),
             ),
+            // grijze balk tussen scenes en bediening verlichting
             Container(
               height: 1080.0,
               width: 5.0,
               color: Colors.grey,
             ),
+            // titelbalk bediening verlichting
             Expanded(
               flex: 3,
               child: Container(
@@ -96,6 +102,7 @@ class _BodyState extends State<Body> {
             ),
             Stack(
               children: [
+                // titelbalk modules
                 Container(
                   height: 100.0,
                   width: 336,
@@ -119,7 +126,7 @@ class _BodyState extends State<Body> {
 
         // scrollbar Verlichting
         Verlichting(),
-
+        // witte achtergrond admin login
         Visibility(
           visible: isVisible,
           child: Container(
@@ -128,15 +135,18 @@ class _BodyState extends State<Body> {
             color: const Color(0x50ffffff),
           ),
         ),
+        // admin login
         Visibility(
           visible: isVisible,
           child: Center(
+            // zwarte vak admin login
             child: Container(
               width: 800,
               height: 500,
               color: const Color(0xff060606),
               child: Column(
                 children: [
+                  // text "Administrator Login"
                  const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -150,6 +160,7 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
+                  // text "Een administrator kan de presets van de scenes permanent aanpassen"
                   const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -163,6 +174,7 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
+                  // text "E-mail"
                   const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -176,6 +188,7 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
+                  // invulvak login
                   const SizedBox(
                     width: 640,
                     child: TextField(
@@ -185,6 +198,7 @@ class _BodyState extends State<Body> {
                           filled: true),
                     ),
                   ),
+                  // text wachtwoord
                   const  Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
@@ -198,6 +212,7 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
+                  // invulvak wachtwoord
                   const SizedBox(
                     width: 640,
                     child: TextField(
@@ -210,6 +225,7 @@ class _BodyState extends State<Body> {
                   ),
                   Row(
                     children: [
+                      // login knop
                       Align(alignment: Alignment.topLeft,
                         child: Padding(padding: const EdgeInsets.only(top: 15.0, left: 80.0),
                           child:
@@ -230,6 +246,7 @@ class _BodyState extends State<Body> {
                           ),
                         ),
                       ),
+                      // cancel knop die het administrator login scherm sluit
                       Align(alignment: Alignment.topLeft,
                         child: Padding(padding: const EdgeInsets.only(top: 15.0, left: 20.0),
                           child:
@@ -256,7 +273,6 @@ class _BodyState extends State<Body> {
                               ),
                             ),
                           ),
-
                         ),
                       ),
                     ],
