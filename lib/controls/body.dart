@@ -3,6 +3,8 @@ import 'package:relaex/controls/scrollables/Scenes.dart';
 import 'package:relaex/controls/scrollables/modules.dart';
 import 'package:relaex/controls/scrollables/verlichting.dart';
 
+const Color blackish = Color(0xff2d2629);
+
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -19,64 +21,14 @@ class _BodyState extends State<Body> {
       children: [
         Row(
           children: [
-            // titelbalk scenes
-            Flexible(
-              fit: FlexFit.loose,
-              child: Stack(
-                children: [
-                  Container(
-                    height: 100.0,
-                    width: 455.0,
-                    color: const Color(0xff2d2629),
-                    child: const Text(
-                      'Scenes',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 60.0,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+ Column(
+                children: const [
+                  // titelbalk scenes
+                  SceneTitlebar(),
+                  Scenes(),
+                  SmalllAdminbar(),
+                  ],
 
-                  // Scrollbar Scenes
-                  const Scenes(),
-                  // tandwiel en logo links onderin pagina
-                  Flexible(
-                    fit: FlexFit.loose,
-                    child: Align(
-                      alignment: Alignment.bottomLeft,
-                      // container tandwiel en logo
-                      child: Container(
-                        height: 100.0,
-                        width: 455.0,
-                        color: const Color(0xff2d2629),
-                        child: Row(
-                          children: [
-                            // detect een klik op het tandwiel en maak de admin login zichtbaar.
-                            GestureDetector(
-                              onTap: () =>
-                                  setState(() => isVisible = true),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 20.0, right: 40.0),
-                                child: Image.asset(
-                                  'assets/cog.png',
-                                  scale: 1.6,
-                                ),
-                              ),
-                            ),
-                            // logo
-                            Image.asset(
-                              'assets/RelaexLogo.jpg',
-                              scale: 1,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
             // grijze balk tussen scenes en bediening verlichting
             Container(
@@ -85,30 +37,13 @@ class _BodyState extends State<Body> {
               color: Colors.grey,
             ),
             // titelbalk bediening verlichting
-            Expanded(
-              flex: 3,
-              child: Container(
-                height: 1080.0,
-                color: const Color(0xff2d2629),
-                child: const Text(
-                  'Bediening Verlichting',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 60.0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-            Stack(
-              children: [
-                // titelbalk modules
-                Container(
-                  height: 100.0,
-                  width: 336,
-                  color: const Color(0xff2d2629),
+            Flexible(
+              fit:  FlexFit.loose,
+                child: Container(
+                  height: 1080.0,
+                  color: blackish,
                   child: const Text(
-                    'Modules',
+                    'Bediening Verlichting',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 60.0,
@@ -116,9 +51,14 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                 ),
+            ),
 
+            Stack(
+              children: const [
+                // titelbalk modules
+                ModuleTitlebar(),
                 // scrollbar Modules
-                const Modules(),
+                Modules(),
               ],
             ),
           ],
@@ -199,7 +139,7 @@ class _BodyState extends State<Body> {
                     ),
                   ),
                   // text wachtwoord
-                  const  Align(
+                  const Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
                       padding: EdgeInsets.only(left: 80, top: 30.0),
@@ -302,8 +242,109 @@ class _BodyState extends State<Body> {
           ),
         ),
         ),
-
       ],
     );
   }
 }
+
+class SceneTitlebar extends StatelessWidget {
+  const SceneTitlebar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70.0,
+      width: 375.0,
+      color: blackish,
+      child: const Text(
+        'Scenes',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 60.0,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
+class SmalllAdminbar extends StatefulWidget {
+  const SmalllAdminbar({Key? key}) : super(key: key);
+
+  @override
+  _SmalllAdminbarState createState() => _SmalllAdminbarState();
+}
+
+class _SmalllAdminbarState extends State<SmalllAdminbar> {
+  bool isVisible = false;
+  @override
+  Widget build(BuildContext context) {
+    return  // tandwiel en logo links onderin pagina
+      Flexible(
+        fit: FlexFit.loose,
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          // container tandwiel en logo
+          child: Container(
+            height: 110.0,
+            width: 375.0,
+            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+            color: blackish,
+            child: Row(
+              children: [
+                // detect een klik op het tandwiel en maak de admin login zichtbaar.
+                GestureDetector(
+                  onTap: () => setState(() => isVisible = true),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 20.0, right: 40.0),
+                    child: Image.asset(
+                      'assets/cog.png',
+                      scale: 1.6,
+                    ),
+                  ),
+                ),
+                // logo
+                Image.asset(
+                  'assets/RelaexLogo.jpg',
+                  scale: 1,
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+  }
+}
+
+class LightsTitlebar extends StatelessWidget {
+  const LightsTitlebar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
+class ModuleTitlebar extends StatelessWidget {
+  const ModuleTitlebar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150.0,
+      width: 336,
+      color: blackish,
+      child: const Text(
+        'Modules',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 60.0,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
