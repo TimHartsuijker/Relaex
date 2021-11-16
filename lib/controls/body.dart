@@ -20,52 +20,29 @@ class _BodyState extends State<Body> {
     return Stack(
       children: [
         Row(
-          children: [
-             Column(
-                children: const [
-                  // titelbalk scenes
-                  SceneTitlebar(),
-                  Scenes(),
-                  SmalllAdminbar(),
-                  ],
-
-            ),
-            // grijze balk tussen scenes en bediening verlichting
-            Container(
-              height: 1080.0,
-              width: 5.0,
-              color: Colors.grey,
-            ),
-            // titelbalk bediening verlichting
-            Flexible(
-              fit:  FlexFit.loose,
-                child: Container(
-                  height: 1080.0,
-                  color: blackish,
-                  child: const Text(
-                    'Bediening Verlichting',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 60.0,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-            ),
-
-            Stack(
-              children: const [
-                // titelbalk modules
+          children: const [
+                SceneTitlebar(),
+                LightsTitlebar(),
                 ModuleTitlebar(),
-                // scrollbar Modules
-                Modules(),
-              ],
-            ),
           ],
         ),
 
-        // scrollbar Verlichting
-        Verlichting(),
+        Row(
+          children: [
+                const Scenes(),
+                Verlichting(),
+                const Modules(),
+          ],
+        ),
+
+        const SmalllAdminbar(),
+            // //grijze balk tussen scenes en bediening verlichting
+            // Container(
+            //   height: 1080.0,
+            //   width: 5.0,
+            //   color: Colors.grey,
+            // ),
+
         // witte achtergrond admin login
         Visibility(
           visible: isVisible,
@@ -320,7 +297,19 @@ class LightsTitlebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      height: 70.0,
+      width: 1200,
+      color: blackish,
+      child: const Text(
+        'Bediening Verlichting',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 60.0,
+          color: Colors.white,
+        ),
+      ),
+    );
   }
 }
 
@@ -331,8 +320,8 @@ class ModuleTitlebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
-      width: 336,
+      height: 70.0,
+      width: 335,
       child: const Text(
         'Modules',
         textAlign: TextAlign.center,

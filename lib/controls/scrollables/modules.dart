@@ -11,8 +11,8 @@ class Modules extends StatelessWidget {
           children: const [
             // wit ruimte
             SizedBox(
-              height: 1100,
-              width: 330.0,
+              height: 1030,
+              width: 335.0,
               child: Padding(
                   padding: EdgeInsets.only(top: 100.0),
                   // scrollbar modules

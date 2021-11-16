@@ -12,10 +12,10 @@ class Verlichting extends StatelessWidget {
           children: [
             // witruimte
             SizedBox(
-              height: 1100,
-              width: 1600.0,
+              height: 1030,
+              width: 1200.0,
               child: Padding(
-                padding: const EdgeInsets.only(top: 100.0, left: 500.0),
+                padding: const EdgeInsets.only(top: 100.0, left: 50.0),
                 // scrollbar besturing lichten
                 child: Scrollbar(
                   controller: _firstController,
