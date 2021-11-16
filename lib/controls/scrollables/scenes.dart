@@ -9,10 +9,10 @@ class Scenes extends StatelessWidget {
       children: const <Widget>[
         // wit ruimte
         SizedBox(
-          height: 955,
+          height: 900.0,
           width: 375.0,
           child: Padding(
-            padding: EdgeInsets.only(top: 100.0),
+            padding: EdgeInsets.only(top: 50.0),
             // scrollbar scenes
             child: SceneConstructor(),
           ),
