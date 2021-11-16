@@ -39,7 +39,7 @@ class _BodyState extends State<Body> {
                   ),
 
                   // Scrollbar Scenes
-                  Scenes(),
+                  const Scenes(),
                   // tandwiel en logo links onderin pagina
                   Flexible(
                     fit: FlexFit.loose,
@@ -118,7 +118,7 @@ class _BodyState extends State<Body> {
                 ),
 
                 // scrollbar Modules
-                Modules(),
+                const Modules(),
               ],
             ),
           ],
