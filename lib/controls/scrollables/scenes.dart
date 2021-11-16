@@ -14,7 +14,7 @@ class Scenes extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(top: 100.0),
             // scrollbar scenes
-            child: SceneModule(),
+            child: SceneConstructor(),
           ),
         ),
       ],
@@ -22,14 +22,14 @@ class Scenes extends StatelessWidget {
   }
 }
 
-class SceneModule extends StatefulWidget {
-  const SceneModule({Key? key}) : super(key: key);
+class SceneConstructor extends StatefulWidget {
+  const SceneConstructor({Key? key}) : super(key: key);
 
   @override
-  _SceneModuleState createState() => _SceneModuleState();
+  _SceneConstructorState createState() => _SceneConstructorState();
 }
 
-class _SceneModuleState extends State<SceneModule> {
+class _SceneConstructorState extends State<SceneConstructor> {
   List<bool> isActive = [];
 
   @override
@@ -46,9 +46,9 @@ class _SceneModuleState extends State<SceneModule> {
             // return wat elke rij uit de scrollbar nodig heeft
             return GestureDetector(
               onTap: () => setState(() {
-                if (isActive.any((element) => element == true)) {
+                /*if (isActive.any((element) => element == true && element != isActive[index])) {
                   isActive[isActive.indexWhere((element) => element == true)] = !isActive[isActive.indexWhere((element) => element == true)];
-                }
+                }*/
 
                 isActive[index] = !isActive[index];
               }),
