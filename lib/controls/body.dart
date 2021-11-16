@@ -21,7 +21,7 @@ class _BodyState extends State<Body> {
       children: [
         Row(
           children: [
- Column(
+             Column(
                 children: const [
                   // titelbalk scenes
                   SceneTitlebar(),
@@ -255,7 +255,6 @@ class SceneTitlebar extends StatelessWidget {
     return Container(
       height: 70.0,
       width: 375.0,
-      color: blackish,
       child: const Text(
         'Scenes',
         textAlign: TextAlign.center,
@@ -289,7 +288,6 @@ class _SmalllAdminbarState extends State<SmalllAdminbar> {
             height: 110.0,
             width: 375.0,
             padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
-            color: blackish,
             child: Row(
               children: [
                 // detect een klik op het tandwiel en maak de admin login zichtbaar.
@@ -335,7 +333,6 @@ class ModuleTitlebar extends StatelessWidget {
     return Container(
       height: 150.0,
       width: 336,
-      color: blackish,
       child: const Text(
         'Modules',
         textAlign: TextAlign.center,
