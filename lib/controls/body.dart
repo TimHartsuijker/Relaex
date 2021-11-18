@@ -14,7 +14,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +29,10 @@ class _BodyState extends State<Body> {
           ],
         ),
         Row(
-          children: [
-            const Scenes(),
+          children: const [
+            Scenes(),
             Verlichting(),
-            const Modules(),
+            Modules(),
           ],
         ),
         const AdminPanel(),

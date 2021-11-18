@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:relaex/controls/objects/zones/zonemanager.dart';
 
-class Verlichting extends StatelessWidget {
-  Verlichting({Key? key}) : super(key: key);
+class Verlichting extends StatefulWidget {
+  const Verlichting({Key? key}) : super(key: key);
+
+  @override
+  _VerlichtingState createState() => _VerlichtingState();
+}
+
+class _VerlichtingState extends State<Verlichting> {
   final ScrollController _firstController = ScrollController();
+  List<bool> isActive = [];
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +31,7 @@ class Verlichting extends StatelessWidget {
                     controller: _firstController,
                     itemCount: 11,
                     itemBuilder: (BuildContext context, int index) {
+                      isActive.add(false);
                       String title = ZoneManager.zones[index].title;
                       // return wat elke rij in de scrollbar moet hebben.
                       return Column(
@@ -31,15 +39,20 @@ class Verlichting extends StatelessWidget {
                           Row(
                             children: [
                               // knop om lampen aan of uit te zetten
-                              Image.asset(
-                                'assets/powerButtonOFF.png',
-                                scale: 4,
+                              GestureDetector(
+                                onTap: (() => setState(() => isActive[index] = !isActive[index])
+                                ),
+                                child: Image.asset(
+                                  isActive[index] ? 'assets/powerButtonON.png' : 'assets/powerButtonOFF.png',
+                                  scale: 4,
+                                ),
                               ),
+
                               // naam lampen groep
                               Padding(
                                 padding: const EdgeInsets.only(left: 25.0),
                                 child: Text(
-                                  '$title',
+                                  title,
                                   style: const TextStyle(
                                     fontSize: 30.0,
                                     color: Colors.white,
