@@ -6,6 +6,5 @@ class SceneBO {
   SceneBO(int _id, String _title) {
     id = _id;
     title = _title;
-
   }
 }

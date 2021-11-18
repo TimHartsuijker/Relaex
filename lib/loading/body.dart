@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:relaex/controls/objects/scenemanager.dart';
+import 'package:relaex/controls/objects/scenes/scenemanager.dart';
+import 'package:relaex/controls/objects/modules/modulemanager.dart';
+import 'package:relaex/controls/objects/zones/zonemanager.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -29,6 +31,8 @@ class Body extends StatelessWidget {
         GestureDetector(
           onTap: () {
             SceneManager.loadScenes();
+            ModuleManager.loadModules();
+            ZoneManager.loadZones();
             Navigator.pushNamed(context, '/controls');
           },
           child: Container(
