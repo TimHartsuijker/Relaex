@@ -55,23 +55,24 @@ class _SceneConstructorState extends State<SceneConstructor> {
               isActive[index] = !isActive[index];
             }),
             child: Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.only(bottom: 25.0, right: 70.0),
               // naam scene
               child: Column(
                 children: [
-                  Text(
-                    '$title',
-                    textAlign: TextAlign.left,
+                  Padding(padding: const EdgeInsets.only(right: 120.0),
+                  child: Text(
+                    title,
                     style: TextStyle(
                       fontSize: 40.0,
                       color: isActive[index] ? Colors.blue : Colors.white,
                     ),
                   ),
+                  ),
+
                   Text(
-                    '$description',
-                    textAlign: TextAlign.left,
+                    description,
                     style: TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       color: isActive[index] ? Colors.blue : Colors.white,
                     ),
                   ),
