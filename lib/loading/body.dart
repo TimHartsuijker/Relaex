@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relaex/controls/classes/scenemanager.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -27,6 +28,7 @@ class Body extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
+            SceneManager.loadScenes();
             Navigator.pushNamed(context, '/controls');
           },
           child: Container(
