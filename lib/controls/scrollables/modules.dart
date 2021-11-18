@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relaex/controls/objects/modules/modulemanager.dart';
 
 class Modules extends StatelessWidget {
   const Modules({Key? key}) : super(key: key);
@@ -47,6 +48,7 @@ class _ModuleConstructorState extends State<ModuleConstructor> {
         itemCount: 11,
         itemBuilder: (BuildContext context, int index) {
           isActive.add(false);
+          String title = ModuleManager.modules[index].title;
           // return wat elke rij uit de scrollbar nodig heeft
           return Column(
             children: [
@@ -64,7 +66,7 @@ class _ModuleConstructorState extends State<ModuleConstructor> {
               Padding(
                 padding: const EdgeInsets.all(1.0),
                 child: Text(
-                  'Module $index',
+                  '$title',
                   style: const TextStyle(
                     fontSize: 25.0,
                     color: Colors.white,

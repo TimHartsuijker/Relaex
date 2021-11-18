@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relaex/controls/objects/zones/zonemanager.dart';
 
 class Verlichting extends StatelessWidget {
   Verlichting({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class Verlichting extends StatelessWidget {
                     controller: _firstController,
                     itemCount: 11,
                     itemBuilder: (BuildContext context, int index) {
+                      String title = ZoneManager.zones[index].title;
                       // return wat elke rij in de scrollbar moet hebben.
                       return Column(
                         children: [
@@ -37,7 +39,7 @@ class Verlichting extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(left: 25.0),
                                 child: Text(
-                                  'Lampengroep $index',
+                                  '$title',
                                   style: const TextStyle(
                                     fontSize: 30.0,
                                     color: Colors.white,
