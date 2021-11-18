@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:relaex/controls/classes/scenemanager.dart';
+import 'package:relaex/controls/objects/scenemanager.dart';
 class Scenes extends StatelessWidget {
   const Scenes({Key? key}) : super(key: key);
 

@@ -1,4 +1,4 @@
-import 'package:relaex/controls/classes/scenebo.dart';
+import 'package:relaex/controls/objects/scenebo.dart';
 
 class SceneManager {
   static List<SceneBO> scenes = [];
