@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:relaex/controls/objects/zones/zonemanager.dart';
 
-class Verlichting extends StatefulWidget {
-  const Verlichting({Key? key}) : super(key: key);
+class Zone extends StatefulWidget {
+  const Zone({Key? key}) : super(key: key);
 
   @override
-  _VerlichtingState createState() => _VerlichtingState();
+  _ZoneState createState() => _ZoneState();
 }
 
-class _VerlichtingState extends State<Verlichting> {
+class _ZoneState extends State<Zone> {
   final ScrollController _firstController = ScrollController();
   List<bool> isActive = [];
-
+  List<double> sliderValue = [];
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -32,6 +32,7 @@ class _VerlichtingState extends State<Verlichting> {
                     itemCount: 11,
                     itemBuilder: (BuildContext context, int index) {
                       isActive.add(false);
+                      sliderValue.add(0);
                       String title = ZoneManager.zones[index].title;
                       // return wat elke rij in de scrollbar moet hebben.
                       return Column(
@@ -66,9 +67,16 @@ class _VerlichtingState extends State<Verlichting> {
                             padding: const EdgeInsets.only(bottom: 20.0),
                             child: Row(
                               children: [
-                                Image.asset(
-                                  'assets/BarRGB.png',
-                                  scale: 0.6,
+                                SliderTheme(
+                                  data: const SliderThemeData(
+                                    trackHeight: 1,
+                                  ),
+                                  child: Slider(
+                                    value: sliderValue[index],
+                                    onChanged: (newSliderValue) => setState(() => sliderValue[index] = newSliderValue),
+                                    min: 0,
+                                    max: 255,
+                                  ),
                                 ),
                                 // knop om lichten op wit te zetten
                                 Padding(

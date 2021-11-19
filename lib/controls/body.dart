@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:relaex/controls/scrollables/Scenes.dart';
 import 'package:relaex/controls/scrollables/modules.dart';
-import 'package:relaex/controls/scrollables/verlichting.dart';
+import 'package:relaex/controls/scrollables/zones.dart';
 
 const Color blackish = Color(0xff2d2629);
 const double titlebarHeight = 85.0;
@@ -31,7 +31,7 @@ class _BodyState extends State<Body> {
         Row(
           children: const [
             Scenes(),
-            Verlichting(),
+            Zone(),
             Modules(),
           ],
         ),
