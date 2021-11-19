@@ -45,36 +45,10 @@ class _ModuleConstructorState extends State<ModuleConstructor> {
       controller: _firstController,
       child: ListView.builder(
         controller: _firstController,
-        itemCount: 11,
+        itemCount: ModuleManager.modules.length,
         itemBuilder: (BuildContext context, int index) {
-          isActive.add(false);
-          String title = ModuleManager.modules[index].title;
           // return wat elke rij uit de scrollbar nodig heeft
-          return Column(
-            children: [
-              // detect een klik op de module
-              GestureDetector(
-                onTap: (() => setState(() => isActive[index] = !isActive[index])
-                ),
-                child: Image.asset(
-                  isActive[index] ? 'assets/SmartPlugON.png' : 'assets/SmartPlugOFF.png',
-                  scale: 3,
-                ),
-                // plaatje smart plug
-              ),
-              // naam module
-              Padding(
-                padding: const EdgeInsets.all(1.0),
-                child: Text(
-                  '$title',
-                  style: const TextStyle(
-                    fontSize: 25.0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          );
+          return ModuleManager.modules[index];
         },
       ),
     );
